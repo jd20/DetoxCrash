@@ -1,0 +1,24 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "behavior": {
+    "init": {
+      "reinstallApp": false,
+      "launchApp": false,
+      "exposeGlobals": false
+    },
+    "cleanup": {
+      "shutdownDevice": false
+    }
+  },
+  "configurations": {
+    "ios": {
+      "type": "ios.simulator",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/DetoxCrash.app",
+      "build": "xcodebuild ARCHS='x86_64' ONLY_ACTIVE_ARCH=YES -workspace ios/DetoxCrash.xcworkspace -scheme DetoxCrash -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+      "device": {
+        "type": "iPhone 8 Plus"
+      }
+    }
+  }
+}
